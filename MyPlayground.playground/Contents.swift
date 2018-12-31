@@ -201,3 +201,21 @@ let s = Sakana()
 s.eat()
 
 
+enum MyError: Error {
+    case InvalidValue
+}
+
+func doubleUp(value: Int) throws -> Int {
+    if value < 0 {
+        throw MyError.InvalidValue
+    }
+    return value * 2
+}
+
+//doubleUp(value: -1)
+
+// key と value を for文で両方使いたいときに使う
+for (index, value) in arry.enumerated() {
+    print("\(index): \(value)")
+}
+
